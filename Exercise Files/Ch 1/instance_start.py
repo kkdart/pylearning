@@ -10,6 +10,7 @@ class Book:
         self.author = author
         self.pages = pages
         self.price = price
+        self.__secret = "This is the secret attribute"
         # TODO: add properties
 
     # TODO: create instance methods
@@ -21,14 +22,16 @@ class Book:
     def setdiscount(self,amount):
         self._discount = amount
 # TODO: create some book instances
-b1 = Book("War and Peace", "Leo Tolstory", 1225,39.95)
+b1 = Book("War and Peace", "Leo Tolstoy", 1225,39.95)
 b2 = Book("The Catcher in the Rye", "JD Salinger",234,29.95)
 
 # TODO: print the price of book1
+print(b1.getprice())
+
+# TODO: try setting the discount
 print(b2.getprice())
 b2.setdiscount(.25)
 print(b2.getprice())
-# TODO: try setting the discount
-
 
 # TODO: properties with double underscores are hidden by the interpreter
+print(b2._Book__secret)
