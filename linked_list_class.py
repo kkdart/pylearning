@@ -9,11 +9,13 @@ class LinkedList:
         self.head = new_node
         self.tail = new_node
         self.length = 1
+
     def print_list(self):
         temp = self.head
         while temp is not None:
             print(temp.value)
             temp = temp.next
+
     def append(self, value):
         new_node = Node(value)
         if self.head is None:
@@ -26,8 +28,10 @@ class LinkedList:
         return True
 
 
-my_linked_list = LinkedList(4)
+my_linked_list = LinkedList(1)
 
-print(my_linked_list.head.value)
+my_linked_list.append(2)
+
+my_linked_list.print_list()
 
 
