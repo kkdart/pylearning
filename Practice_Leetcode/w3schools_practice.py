@@ -1,6 +1,2 @@
-print('Hello World')
-
-
-x = 5
-y = 10
-print(x + y)
+newlist = [x for x in range(10)]
+print(newlist)
