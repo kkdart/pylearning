@@ -3,10 +3,10 @@ def twoSum(nums, target):
     for i,n in enumerate(nums):
         m = target-n
         if m in d:
+            print(d)
             return [d[m],i]
         else:
             d[n]=i
-    
 
 nums = [2,7,11,15]
 target = 9
