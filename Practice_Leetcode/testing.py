@@ -57,7 +57,6 @@ def average(*nums):
     print(s)
     return round(float(s)/c,2)
 
-'''
 
 def numCells(grid):
     res=0
@@ -75,3 +74,17 @@ def numCells(grid):
             else:
                 res+=1
         return res
+
+'''
+
+def staircase(n):
+    for i in range(n):
+        txt = ""
+        spaces = n-i-1
+        for j in range(spaces):
+            txt+=" "
+        for k in range(i+1):
+            txt+="#"
+        print(txt)
+
+staircase(3)
