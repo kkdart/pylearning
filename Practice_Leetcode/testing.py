@@ -14,6 +14,7 @@ num_strings = 2
 s1 = "Hacker"
 s2 = "Rank"
 
+<<<<<<< HEAD
 for i in range(num_strings):
     print(s1)
 
