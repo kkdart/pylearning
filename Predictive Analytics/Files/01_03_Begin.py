@@ -13,8 +13,8 @@ from sklearn.impute import SimpleImputer
 import matplotlib.pyplot as plt 
 
 #import data
-#data = pd.read_csv("../Datasets/insurance.csv")
-data = pd.read_csv("/Users/kyryl/Documents/GitHub/pylearning/Predictive Analytics/Datasets/insurance.csv")
+data = pd.read_csv("../Datasets/insurance.csv")
+#data = pd.read_csv("/Users/kyryl/Documents/GitHub/pylearning/Predictive Analytics/Datasets/insurance.csv")
 
 
 #see the first 15 lines of data
@@ -23,10 +23,9 @@ print(data.head(15))
 ############################################01_03_HandlingMissingValues###################################################
 
 #check how many values are missing (NaN) before we apply the methods below 
+print(data.info())
+
 count_nan = data.isnull().sum()
-print('\n.isnull()')
-print(data.isnull())
-print('\n.isnull().sum()')
 print(count_nan[count_nan>0])
 
 #fill in the missing values (there are so many other methods out there)
