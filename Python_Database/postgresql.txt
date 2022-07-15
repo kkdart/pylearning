@@ -1,0 +1,29 @@
+Postgress install
+    docker run --name kyryl -e POSTGRES_PASSWORD=pwtesting -d postgres
+
+    docker run -d -p 5432:5432 --name pgtest -e POSTGRES_PASSWORD=pwtesting postgres
+
+Create DB
+    create database '<dbname>';
+
+Create User
+    create user '<user>' with encrypted password '<password>';
+
+Grant Permissions
+    GRANT ALL PRIVILEGES ON DATABASE <dbname> TO <user>
+
+
+Login
+    psql -d mydb -U myuser
+
+Example:
+    psql -d testing -U kyryl
+
+Logout/Quit
+    \q
+
+list database
+    \l 
+
+list users
+    \du
