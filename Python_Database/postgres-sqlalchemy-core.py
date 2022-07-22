@@ -1,7 +1,8 @@
 from sqlalchemy import create_engine  
 from sqlalchemy import Table, Column, String, MetaData
 
-engine = create_engine('postgres://postgres:password@localhost/red30')
+#connect w/ postgressql: not postgres:
+engine = create_engine('postgresql://postgres:pwtesting@10.1.1.40/red30')
 
 with engine.connect() as connection:
     meta = MetaData(engine)  

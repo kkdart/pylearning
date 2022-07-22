@@ -16,7 +16,7 @@ create_employee = '''CREATE TABLE IF NOT EXISTS employee(
     ID SERIAL PRIMARY KEY,
     NAME TEXT NOT NULL,
     AGE INT NOT NULL,
-    SALARY DECIMAL);'''
+    SALARY INT);'''
 
 cur.execute(create_employee)
 
