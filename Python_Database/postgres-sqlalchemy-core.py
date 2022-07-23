@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine  
 from sqlalchemy import Table, Column, String, MetaData
+import pandas as pd
 
 #connect w/ postgressql: not postgres:
 engine = create_engine('postgresql://postgres:pwtesting@10.1.1.40/red30')
@@ -43,3 +44,9 @@ with engine.connect() as connection:
     # Confirm Delete: Read
     not_found_set = connection.execute(reselect_statement)
     print(not_found_set.rowcount)
+
+    select_statement = sales_table.select()
+    df = pd.read_sql_query(select_statement, engine)
+    print(df.describe())
+    print("dataframe shape: ", df.shape)
+    print(df)

@@ -1,8 +1,7 @@
-#pip3 install psycopg2
-# pip3 install psycopg2-binary
+#win pip3 install psycopg2
+#mac os pip3 install psycopg2-binary
 
 import psycopg2
-import csv
 
 conn = psycopg2.connect(database ="red30",
     user="postgres",
@@ -13,7 +12,7 @@ conn = psycopg2.connect(database ="red30",
 cur = conn.cursor()
 
 #Query to create sales table
-create_red30 = '''CREATE TABLE Sales
+create_sales_table = '''CREATE TABLE IF NOT EXISTS Sales 
     (ORDER_NUM INT PRIMARY KEY,
         ORDER_TYPE TEXT,
         CUST_NAME TEXT,
@@ -24,7 +23,7 @@ create_red30 = '''CREATE TABLE Sales
         DISCOUNT REAL,
         ORDER_TOTAL REAL);'''
 
-cur.execute(create_red30)
+cur.execute(create_sales_table)
 
 #Insert data from a csv into the sales table
 with open('/Users/kyryl/Desktop/red30-postgres.csv','r') as f:
