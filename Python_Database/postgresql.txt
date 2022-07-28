@@ -27,3 +27,20 @@ list database
 
 list users
     \du
+
+
+psql -h hostname -p portNumber -U userName dbName -W
+psql -h 10.1.1.40 -p 5432 -U postgres red30 -W
+
+
+--Procedures
+CREATE OR REPLACE PROCEDURE return_nondiscounted_item(INT,INT)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+UPDATE sales
+SET quantity = quantity -$2, order_total = order_total - price *  $2
+WHERE order_num =$1 AND discount = 0;
+COMMIT;
+END;
+$$;
