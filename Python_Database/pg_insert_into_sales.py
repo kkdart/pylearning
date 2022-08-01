@@ -1,5 +1,7 @@
 import psycopg2
 
+#pip3 install psycopg2-binary 
+
 def insert_sale(conn, order_num, order_type, cust_name, prod_number, prod_name, quantity, price, discount):
     order_total = quantity * price
     if discount != 0:
