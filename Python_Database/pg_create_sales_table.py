@@ -9,6 +9,8 @@ conn = psycopg2.connect(database ="red30",
     host="10.1.1.40",
     port="5432")
 
+# allows you to  conn.autocommit = True
+
 cur = conn.cursor()
 
 #Query to create sales table
